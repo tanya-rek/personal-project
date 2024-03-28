@@ -1,0 +1,347 @@
+@import "https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Aleo&display=swap";
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  color: #ffffff;
+  font-family: Josefin Sans, sans-serif;
+}
+
+.f-s48 {
+  font-size: 48px;
+}
+
+.main-search-bar {
+  width: 100%;
+  height: 821px;
+  background-image: url(../images/image_1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main-search-bar a {
+  color: #ffffff;
+}
+
+.search-form {
+  width: 100%;
+  height: 68px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.search-form input {
+  height: 66px;
+  width: 40%;
+  margin: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: relative;
+}
+.search-form input::-moz-placeholder {
+  padding-left: 10px;
+  color: grey;
+}
+.search-form input::placeholder {
+  padding-left: 10px;
+  color: grey;
+}
+.search-form .search-button {
+  text-transform: uppercase;
+  background-color: #5474fd;
+  color: white;
+  border: none;
+  font-family: Aleo, serif;
+  position: absolute;
+  right: 30.5%;
+  top: 49.5%;
+  padding: 20px 40px;
+}
+.search-form .search-button:hover {
+  background: white;
+  color: #5474fd;
+}
+.search-form .search-button .search-btn--icon {
+  margin-left: 5px;
+  height: 10%;
+}
+.search-form .search-button:hover {
+  animation-name: bounce;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-direction: alternate;
+  animation-iteration-count: 3s;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25%, 75% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.main-navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #5474fd;
+  position: sticky;
+  padding: 3rem 16rem;
+}
+.main-navigation .company-name {
+  font-size: 2.2rem;
+  color: white;
+}
+.main-navigation .btn {
+  display: none;
+  border: none;
+  background-color: transparent;
+}
+.main-navigation .btn .icon {
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+}
+.main-navigation .pages-navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.main-navigation .pages-navigation ul {
+  list-style: none;
+}
+.main-navigation .pages-navigation ul li {
+  display: inline-block;
+  margin: 0 20px;
+  padding: 6px;
+}
+.main-navigation .pages-navigation ul li a {
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+}
+.main-navigation .pages-navigation ul li:hover {
+  background-color: rgb(238, 166, 33);
+  border-radius: 8px;
+  transition-duration: 1000ms;
+}
+.main-navigation .pages-navigation .btn {
+  display: none;
+}
+@media screen and (max-width: 990px) {
+  .main-navigation .pages-navigation .btn {
+    display: block;
+  }
+  .main-navigation .pages-navigation ul {
+    position: fixed;
+    top: 60px;
+    left: -100vw;
+    background-color: rgba(182, 182, 182, 0.95);
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 100%;
+    transition: left 2000ms ease;
+  }
+  .main-navigation .pages-navigation ul li {
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+  }
+  .main-navigation .pages-navigation ul li a:hover {
+    width: 90%;
+  }
+  .main-navigation .pages-navigation .active {
+    left: 0;
+  }
+}
+
+.why-us {
+  height: 685px;
+  width: 100%;
+  background-image: url(../images/image_2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  align-items: center;
+}
+.why-us .whyus-description--btn {
+  text-transform: uppercase;
+  background-color: #5474fd;
+  color: white;
+  border: none;
+  font-family: Aleo, serif;
+}
+.why-us .whyus-description--btn:hover {
+  background: white;
+  color: #5474fd;
+}
+.why-us .why-us-photos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.why-us .why-us--top-picture {
+  margin-right: 10%;
+}
+.why-us .why-us--bottom-picture {
+  margin-top: 2%;
+  margin-left: 10%;
+}
+
+.sheme {
+  height: 340px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #333333;
+}
+.sheme .sheme-arrows {
+  display: flex;
+  flex-direction: row;
+}
+.sheme .sheme-pictures {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.sheme .sheme-pictures .sheme-checkmark--wrapper {
+  margin-left: 15%;
+  margin-right: 15%;
+  font-family: Aleo, serif;
+}
+
+.tours--first-option,
+.tours--second-option {
+  height: 700px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tours--first-option {
+  background-image: url(../images/image_3.png);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.tours--first-option .tours-first--wrapper {
+  background-color: #232323;
+  opacity: 0.9;
+  height: 370px;
+  width: 30%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.tours--first-option .tours-first--wrapper .tours-first--btn {
+  text-transform: uppercase;
+  background-color: #5474fd;
+  color: white;
+  border: none;
+  font-family: Aleo, serif;
+  width: 40%;
+}
+.tours--first-option .tours-first--wrapper .tours-first--btn:hover {
+  background: white;
+  color: #5474fd;
+}
+
+.tours--second-option {
+  background-image: url(../images/image_4.png);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+.tours--second-option .tours-second--wrapper {
+  background-color: #232323;
+  opacity: 0.9;
+  height: 370px;
+  width: 30%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.tours--second-option .tours-second--wrapper .tours-second--btn {
+  text-transform: uppercase;
+  background-color: #5474fd;
+  color: white;
+  border: none;
+  font-family: Aleo, serif;
+  width: 40%;
+}
+.tours--second-option .tours-second--wrapper .tours-second--btn:hover {
+  background: white;
+  color: #5474fd;
+}
+
+.reviews {
+  height: 731px;
+  background-image: url(../images/image_5.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.reviews .review-wrapper {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  background-color: #333333;
+}
+.reviews .review-wrapper .review--text {
+  padding: 5%;
+}
+
+.footer {
+  height: 270px;
+  width: 100%;
+  background-color: #232323;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.footer .footer-company--info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer .footer-company--info h1 {
+  margin: 0;
+  font-size: 48px;
+  text-transform: uppercase;
+}
+.footer .footer-social-media ul {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer .footer-social-media ul a {
+  color: #ffffff;
+}/*# sourceMappingURL=styles.css.map */
