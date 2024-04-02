@@ -4,20 +4,29 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   padding: 0;
   margin: 0;
   color: $whiteColor;
-  font-family: Josefin Sans, sans-serif;
-}
-
-// Helper Classes
-
-.f-s48 {
-  font-size: 48px;
+  @include JosefinSans;
+  font-size: $f-size-16;
 }
 
 // Header
+
+.header {
+  display: block;
+
+  @media (max-width: $medium-tablet) {
+    display: flex;
+    flex-direction: column-reverse;
+    border-bottom: 30px $primaryColor solid;
+  }
+}
 
 .main-search-bar {
   width: 100%;
@@ -29,6 +38,23 @@ body {
   a {
     color: $whiteColor;
   }
+
+  @media (max-width: $medium-tablet) {
+    height: max-content;
+  }
+}
+
+.search--title {
+  font-size: $f-size-48;
+
+  @media (max-width: $medium-tablet) {
+    font-size: $f-size-36;
+  }
+}
+
+.search--text {
+  font-size: $f-size-22;
+  letter-spacing: $letterSpacing;
 }
 
 .search-form {
@@ -36,56 +62,63 @@ body {
   height: 68px;
   @include d-flex-row-alignCenter;
   justify-content: center;
+  margin: 5% 0 7%;
 
   input {
     height: 66px;
     width: 40%;
     margin: 0;
+    padding-left: 30px;
     box-sizing: border-box;
     cursor: pointer;
-    position: relative;
+    border: none;
 
     &::placeholder {
-      padding-left: 10px;
       color: grey;
+      letter-spacing: $letterSpacing;
+      text-align: center;
+    }
+
+    &:focus::-webkit-input-placeholder {
+      color: transparent;
+    }
+    &:focus::-moz-placeholder {
+      color: transparent;
+    }
+    &:-moz-placeholder {
+      color: transparent;
+    }
+    &:focus::-webkit-input-placeholder {
+      opacity: 0;
+    }
+    &:focus::-moz-placeholder {
+      opacity: 0;
+    }
+    &:-moz-placeholder {
+      opacity: 0;
     }
   }
 
   .search-button {
     @include primary-Button;
-    position: absolute;
-    right: 30.5%;
-    top: 49.5%;
     padding: 20px 40px;
+    border: $whiteBorder;
 
     .search-btn--icon {
       margin-left: 5px;
       height: 10%;
     }
+  }
+}
 
-    &:hover {
-      animation-name: bounce;
-      animation-duration: 0.4s;
-      animation-timing-function: ease-in-out;
-      animation-delay: 0s;
-      animation-direction: alternate;
-      animation-iteration-count: 3s;
-      animation-fill-mode: forwards;
-      animation-play-state: running;
-    }
+.search-scroll--wrapper {
+  a {
+    text-decoration: none;
+    @include d-flex-col-align-center;
+    letter-spacing: $letterSpacing;
 
-    @keyframes bounce {
-      0%,
-      100% {
-        transform: scale(1);
-      }
-      25%,
-      75% {
-        transform: scale(0.9);
-      }
-      50% {
-        transform: scale(1.1);
-      }
+    span {
+      margin: 10px 0 20px;
     }
   }
 }
@@ -96,12 +129,17 @@ body {
   @include d-flex-row-alignCenter;
   justify-content: space-between;
   background-color: $primaryColor;
-  position: sticky;
   @include padding-BigScreen;
 
   .company-name {
-    font-size: 2.2rem;
+    font-size: $f-size-24;
+    font-weight: $font-weight-bold;
     color: white;
+  }
+
+  li {
+    text-transform: uppercase;
+    font-size: $f-size-14;
   }
 
   .btn {
@@ -113,6 +151,10 @@ body {
       color: white;
       cursor: pointer;
     }
+  }
+
+  @media (max-width: $medium-tablet) {
+    @include padding-SmallScreen;
   }
 
   .pages-navigation {
@@ -127,7 +169,6 @@ body {
         padding: 6px;
 
         a {
-          font-size: 1.5rem;
           color: white;
           text-decoration: none;
         }
@@ -144,7 +185,7 @@ body {
       display: none;
     }
 
-    @media screen and (max-width: 990px) {
+    @media (max-width: $medium-tablet) {
       .btn {
         display: block;
       }
@@ -179,14 +220,25 @@ body {
 .why-us {
   height: 685px;
   width: 100%;
+  @include padding-BigScreen;
   background-image: url(../images/image_2.png);
   @include bg-image-cover-noRepeat;
   display: grid;
   grid-template-columns: repeat(2, 50%);
   align-items: center;
 
+  .why-us-description {
+    line-height: 1.8em;
+  }
+
+  .why-us-description--title {
+    @include title-font;
+  }
+
   .whyus-description--btn {
     @include primary-Button;
+    padding: 20px 40px;
+    margin-top: 20px;
   }
 
   .why-us-photos {
@@ -201,28 +253,88 @@ body {
     margin-top: 2%;
     margin-left: 10%;
   }
+
+  @media (max-width: $medium-tablet) {
+    height: max-content;
+    display: grid;
+    grid-template-columns: repeat(35% 65%);
+
+    .why-us-description {
+      line-height: 1.3em;
+    }
+
+    .why-us-description--title {
+      @include subtitle-font;
+    }
+
+    .why-us--top-picture,
+    .why-us--bottom-picture {
+      max-width: 80%;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    display: flex;
+    flex-direction: column-reverse;
+
+    .why-us-description {
+      @include d-flex-col-align-center;
+      line-height: 1.1em;
+    }
+
+    .why-us--top-picture {
+      margin: 20px;
+    }
+
+    .why-us--bottom-picture {
+      display: none;
+    }
+  }
 }
 
 .sheme {
-  height: 340px;
+  height: max-content;
   width: 100%;
+  @include padding-BigScreen;
   @include d-flex-col-align-center;
   justify-content: center;
   background-color: $bgSecondaryBlack;
 
   .sheme-arrows {
     @include d-flex-row;
+    align-self: center;
+    justify-content: center;
   }
 
   .sheme-pictures {
     @include d-flex-row;
     justify-content: center;
-    width: 100%;
+    width: 100vw;
+
+    .sheme-search--wrapper,
+    .sheme-checkmark--wrapper,
+    .sheme-thumsup--wrapper {
+      @include d-flex-col-align-center;
+      justify-content: center;
+      @include subtitle-font;
+    }
 
     .sheme-checkmark--wrapper {
-      margin-left: 15%;
-      margin-right: 15%;
-      font-family: Aleo, serif;
+      margin-left: 16vw;
+      margin-right: 16vw;
+    }
+  }
+
+  @media (max-width: $medium-tablet) {
+    .sheme-arrows {
+      display: none;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    .sheme-pictures {
+      @include d-flex-col-align-center;
+      justify-content: center;
     }
   }
 }
@@ -230,7 +342,13 @@ body {
 .tours--first-option,
 .tours--second-option {
   height: 700px;
+  @include padding-BigScreen;
   @include bg-image-cover-noRepeat;
+
+  @media (max-width: $tablet) {
+    height: max-content;
+    @include padding-SmallScreen;
+  }
 }
 
 .tours--first-option {
@@ -241,16 +359,21 @@ body {
     background-color: $bgPrimaryBlack;
     opacity: 0.9;
     height: 370px;
-    width: 30%;
+    width: 40vw;
     padding: 30px;
     @include d-flex-col;
     justify-content: center;
-
-    .tours-first--btn {
-      @include primary-Button;
-      width: 40%;
-    }
   }
+}
+
+.tours-first--country,
+.tours-second--country {
+  font-size: $f-size-20;
+}
+
+.tours-first--name,
+.tours-second--name {
+  text-transform: uppercase;
 }
 
 .tours--second-option {
@@ -262,32 +385,118 @@ body {
     background-color: $bgPrimaryBlack;
     opacity: 0.9;
     height: 370px;
-    width: 30%;
+    width: 40vw;
     padding: 30px;
     @include d-flex-col;
     justify-content: center;
+  }
+}
 
-    .tours-second--btn {
-      @include primary-Button;
-      width: 40%;
+.tours-first--btn,
+.tours-second--btn {
+  @include primary-Button;
+  width: 70%;
+  @include primaryButton-Size;
+
+  &:hover {
+    animation-name: bounce;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-direction: alternate;
+    animation-iteration-count: 3s;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+  }
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    25%,
+    75% {
+      transform: scale(0.9);
+    }
+    50% {
+      transform: scale(1.1);
     }
   }
 }
 
 .reviews {
   height: 731px;
+  @include padding-BigScreen;
   background-image: url(../images/image_5.png);
   @include bg-image-cover-noRepeat;
   @include d-flex-col-align-center;
   justify-content: center;
 
-  .review-wrapper {
-    width: 70%;
-    @include d-flex-row;
-    background-color: $bgSecondaryBlack;
+  .reviews-title {
+    @include title-font;
+  }
+
+  @media (max-width: $medium-tablet) {
+    height: 40%;
+
+    .reviews-title {
+      @include subtitle-font;
+    }
+  }
+
+  @media (max-width: $phone) {
+    @include padding-SmallScreen;
+  }
+}
+
+.review-wrapper {
+  width: 80%;
+  @include d-flex-row;
+  background-color: $bgSecondaryBlack;
+
+  .review--text {
+    padding: 5%;
+    line-height: 20px;
+
+    .fa-quote-left {
+      color: $primaryColor;
+    }
+  }
+  @media (max-width: $desktop) {
+    width: 100%;
+    height: 60%;
+    @include d-flex-row-alignCenter;
+
+    img {
+      max-height: 80%;
+      padding-left: 2%;
+    }
 
     .review--text {
-      padding: 5%;
+      padding: 2%;
+    }
+  }
+
+  @media (max-width: $medium-tablet) {
+    height: 40%;
+
+    img {
+      max-width: 40%;
+    }
+
+    .review--text {
+      font-size: $f-size-14;
+    }
+  }
+
+  @media (max-width: $phone) {
+    @include padding-SmallScreen;
+    @include d-flex-col-align-center;
+    height: max-content;
+    width: 90%;
+
+    img {
+      max-width: 40%;
     }
   }
 }
@@ -295,6 +504,7 @@ body {
 .footer {
   height: 270px;
   width: 100%;
+  @include padding-BigScreen;
   background-color: $bgPrimaryBlack;
   display: grid;
   justify-content: center;
@@ -303,9 +513,10 @@ body {
   .footer-company--info {
     @include d-flex-col-align-center;
 
-    h1 {
-      margin: 0;
-      font-size: 48px;
+    .footer-company--name {
+      @include JosefinSans;
+      font-size: $f-size-24;
+      font-weight: 700;
       text-transform: uppercase;
     }
   }
@@ -316,9 +527,24 @@ body {
       list-style: none;
       @include d-flex-row-alignCenter;
       justify-content: space-between;
+
+      li {
+        width: 5%;
+      }
+
       a {
         color: $whiteColor;
+
+        .fa-brands:hover {
+          color: $primaryColor;
+        }
       }
     }
+  }
+
+  @media (max-width: $tablet) {
+    height: 270px;
+    width: 100%;
+    @include padding-SmallScreen;
   }
 }

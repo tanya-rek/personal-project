@@ -1,6 +1,52 @@
+@use "variables" as *;
+
 @import "https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap";
 @import "https://fonts.googleapis.com/css2?family=Aleo&display=swap";
+
+//Fonts
+@mixin JosefinSans {
+  font-family: Josefin Sans, Helvetica, sans-serif;
+}
+
+@mixin Aleo {
+  font-family: "Aleo", "Times New Roman", Times, serif;
+}
+
+//Font Weight and Size
 
 $font-weight-bold: 700;
 $fontWeight-regular: 400;
 $font-weight-medium: 500;
+
+$f-size-14: 0.875em;
+$f-size-16: 1em;
+$f-size-20: 1.25em;
+$f-size-22: 1.375em;
+$f-size-24: 1.5em;
+$f-size-36: 2.25em;
+$f-size-48: 3rem;
+
+// Text Decoration Variables
+
+$letterSpacing: 3px;
+
+@mixin primary-Btn-text {
+  font-size: $f-size-16;
+  font-weight: 400;
+  @include Aleo;
+  color: $whiteColor;
+}
+
+@mixin title-font {
+  font-size: $f-size-36;
+  font-weight: $fontWeight-regular;
+  line-height: 45px;
+  @include Aleo;
+}
+
+@mixin subtitle-font {
+  font-size: $f-size-24;
+  font-weight: $fontWeight-regular;
+  line-height: 35px;
+  @include Aleo;
+}

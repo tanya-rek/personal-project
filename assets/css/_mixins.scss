@@ -1,5 +1,11 @@
-@use "colors";
-@use "fonts";
+@use "variables" as *;
+@use "fonts" as *;
+
+@mixin zero {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
 
 @mixin d-flex-row {
   display: flex;
@@ -24,26 +30,29 @@
 }
 
 @mixin padding-BigScreen {
-  padding: 3rem 16rem;
+  padding: 2rem 6rem;
 }
 
 @mixin padding-SmallScreen {
-  padding: 20px;
+  padding: 30px;
 }
 
 @mixin primary-Button {
   text-transform: uppercase;
-  background-color: #5474fd;
-  color: white;
+  background-color: $primaryColor;
   border: none;
-  font-family: Aleo, serif;
+  @include primary-Btn-text;
   &:hover {
-    background: rgba(white, 1);
-    color: #5474fd;
+    background: rgba($whiteColor, 1);
+    color: $primaryColor;
   }
 }
 
 @mixin bg-image-cover-noRepeat {
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+@mixin primaryButton-Size {
+  padding: 20px 64px;
 }
