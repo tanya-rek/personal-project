@@ -1,0 +1,49 @@
+@use "colors";
+@use "fonts";
+
+@mixin d-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin d-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin d-flex-row-alignCenter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@mixin d-flex-col-align-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin padding-BigScreen {
+  padding: 3rem 16rem;
+}
+
+@mixin padding-SmallScreen {
+  padding: 20px;
+}
+
+@mixin primary-Button {
+  text-transform: uppercase;
+  background-color: #5474fd;
+  color: white;
+  border: none;
+  font-family: Aleo, serif;
+  &:hover {
+    background: rgba(white, 1);
+    color: #5474fd;
+  }
+}
+
+@mixin bg-image-cover-noRepeat {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
