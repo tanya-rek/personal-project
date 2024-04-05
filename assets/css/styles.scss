@@ -109,6 +109,22 @@ body {
       height: 10%;
     }
   }
+  @media (max-width: $medium-tablet) {
+    height: 68px;
+
+    input {
+      width: 60%;
+
+      &::placeholder {
+        letter-spacing: normal;
+      }
+    }
+
+    .search-button {
+      @include min-primary-Button;
+      border: 5px $whiteColor solid;
+    }
+  }
 }
 
 .search-scroll--wrapper {
@@ -142,13 +158,13 @@ body {
     font-size: $f-size-14;
   }
 
-  .btn {
+  .hamburger-menu--btn {
     display: none;
     border: none;
     background-color: transparent;
     .icon {
-      font-size: 3rem;
-      color: white;
+      font-size: $f-size-48;
+      color: $whiteColor;
       cursor: pointer;
     }
   }
@@ -167,6 +183,7 @@ body {
         display: inline-block;
         margin: 0 20px;
         padding: 6px;
+        text-align: center;
 
         a {
           color: white;
@@ -181,12 +198,12 @@ body {
       }
     }
 
-    .btn {
+    .hamburger-menu--btn {
       display: none;
     }
 
     @media (max-width: $medium-tablet) {
-      .btn {
+      .hamburger-menu--btn {
         display: block;
       }
       ul {
@@ -203,7 +220,7 @@ body {
           margin-top: 5px;
 
           a:hover {
-            width: 90%;
+            width: 100%;
           }
         }
       }
@@ -215,7 +232,7 @@ body {
   }
 }
 
-// Sections
+// Why Us
 
 .why-us {
   height: 685px;
@@ -276,6 +293,7 @@ body {
   @media (max-width: $tablet) {
     display: flex;
     flex-direction: column-reverse;
+    @include padding-SmallScreen;
 
     .why-us-description {
       @include d-flex-col-align-center;
@@ -289,8 +307,16 @@ body {
     .why-us--bottom-picture {
       display: none;
     }
+
+    .whyus-description--btn {
+      @include min-primary-Button;
+      padding: 20px 40px;
+      margin-top: 20px;
+    }
   }
 }
+
+//The sheme with arrows
 
 .sheme {
   height: max-content;
@@ -335,20 +361,28 @@ body {
     .sheme-pictures {
       @include d-flex-col-align-center;
       justify-content: center;
+
+      .sheme-search--wrapper,
+      .sheme-checkmark--wrapper,
+      .sheme-thumsup--wrapper {
+        width: 70%;
+        @include subtitle-font-min;
+
+        img {
+          width: 13%;
+        }
+      }
     }
   }
 }
+
+//Tours
 
 .tours--first-option,
 .tours--second-option {
   height: 700px;
   @include padding-BigScreen;
   @include bg-image-cover-noRepeat;
-
-  @media (max-width: $tablet) {
-    height: max-content;
-    @include padding-SmallScreen;
-  }
 }
 
 .tours--first-option {
@@ -363,6 +397,21 @@ body {
     padding: 30px;
     @include d-flex-col;
     justify-content: center;
+  }
+
+  @media (max-width: $tablet) {
+    height: max-content;
+    @include padding-SmallScreen;
+    @include d-flex-row-alignCenter;
+    justify-content: center;
+
+    .tours-first--wrapper {
+      background-color: $bgPrimaryBlack;
+      opacity: 0.9;
+      height: 370px;
+      width: 90vw;
+      padding: 30px;
+    }
   }
 }
 
@@ -389,6 +438,21 @@ body {
     padding: 30px;
     @include d-flex-col;
     justify-content: center;
+  }
+
+  @media (max-width: $tablet) {
+    height: max-content;
+    @include padding-SmallScreen;
+    @include d-flex-row-alignCenter;
+    justify-content: center;
+
+    .tours-second--wrapper {
+      background-color: $bgPrimaryBlack;
+      opacity: 0.9;
+      height: 370px;
+      width: 90vw;
+      padding: 30px;
+    }
   }
 }
 
@@ -422,7 +486,19 @@ body {
       transform: scale(1.1);
     }
   }
+
+  @media (max-width: $medium-tablet) {
+    @include min-primaryButton-Size;
+  }
+
+  @media (max-width: $tablet) {
+    @include min-primary-Button;
+    width: 40%;
+    @include min-primaryButton-Size;
+  }
 }
+
+//Reviews
 
 .reviews {
   height: 731px;
@@ -479,6 +555,7 @@ body {
 
   @media (max-width: $medium-tablet) {
     height: 40%;
+    @include padding-SmallScreen;
 
     img {
       max-width: 40%;
@@ -500,6 +577,8 @@ body {
     }
   }
 }
+
+//Footer
 
 .footer {
   height: 270px;
@@ -543,8 +622,15 @@ body {
   }
 
   @media (max-width: $tablet) {
-    height: 270px;
+    height: 200px;
     width: 100%;
     @include padding-SmallScreen;
+
+    .footer-company--name {
+      @include JosefinSans;
+      font-size: $f-size-20;
+      font-weight: 400;
+      margin-bottom: 0;
+    }
   }
 }
