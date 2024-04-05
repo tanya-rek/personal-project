@@ -37,6 +37,13 @@ $letterSpacing: 3px;
   color: $whiteColor;
 }
 
+@mixin min-primary-Btn-text {
+  font-size: $f-size-14;
+  font-weight: 300;
+  @include Aleo;
+  color: $whiteColor;
+}
+
 @mixin title-font {
   font-size: $f-size-36;
   font-weight: $fontWeight-regular;
@@ -48,5 +55,12 @@ $letterSpacing: 3px;
   font-size: $f-size-24;
   font-weight: $fontWeight-regular;
   line-height: 35px;
+  @include Aleo;
+}
+
+@mixin subtitle-font-min {
+  font-size: $f-size-20;
+  font-weight: $fontWeight-regular;
+  line-height: 30px;
   @include Aleo;
 }
