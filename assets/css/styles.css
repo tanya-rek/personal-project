@@ -37,6 +37,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 .main-search-bar a {
   color: #ffffff;
@@ -112,6 +113,7 @@ body {
   text-transform: uppercase;
   background-color: #5474fd;
   border: none;
+  cursor: pointer;
   font-size: 1em;
   font-weight: 400;
   font-family: "Aleo", "Times New Roman", Times, serif;
@@ -120,12 +122,29 @@ body {
   border: 4px #ffffff solid;
 }
 .search-form .search-button:hover {
-  background: white;
-  color: #5474fd;
+  background: #7089fc;
 }
 .search-form .search-button .search-btn--icon {
   margin-left: 5px;
   height: 10%;
+}
+.search-form .search-button:hover {
+  animation-name: stretch;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-direction: alternate;
+  animation-iteration-count: 3s;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+@keyframes stretch {
+  0%, 100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(1.3);
+  }
 }
 @media (max-width: 991px) {
   .search-form {
@@ -144,6 +163,7 @@ body {
     text-transform: none;
     background-color: #5474fd;
     border: none;
+    cursor: pointer;
     font-size: 0.875em;
     font-weight: 300;
     font-family: "Aleo", "Times New Roman", Times, serif;
@@ -151,8 +171,7 @@ body {
     border: 5px #ffffff solid;
   }
   .search-form .search-button:hover {
-    background: white;
-    color: #5474fd;
+    background: #7089fc;
   }
 }
 
@@ -166,6 +185,28 @@ body {
 .search-scroll--wrapper a span {
   margin: 10px 0 20px;
 }
+.search-scroll--wrapper a:hover {
+  animation: rotation 1000ms 3;
+  cursor: pointer;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(-15deg);
+    color: #7089fc;
+  }
+  50% {
+    transform: rotate(0deg);
+    color: #ffffff;
+  }
+  75% {
+    transform: rotate(15deg);
+    color: #7089fc;
+  }
+  100% {
+    transform: rotate(0deg);
+    color: #ffffff;
+  }
+}
 
 .main-navigation {
   display: flex;
@@ -178,7 +219,8 @@ body {
 .main-navigation .company-name {
   font-size: 1.5em;
   font-weight: 700;
-  color: white;
+  color: #ffffff;
+  cursor: pointer;
 }
 .main-navigation li {
   text-transform: uppercase;
@@ -214,12 +256,13 @@ body {
   text-align: center;
 }
 .main-navigation .pages-navigation ul li a {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
 }
 .main-navigation .pages-navigation ul li:hover {
-  background-color: rgb(238, 166, 33);
+  background-color: #7089fc;
   border-radius: 8px;
+  font-size: 1em;
   transition-duration: 1000ms;
 }
 .main-navigation .pages-navigation .hamburger-menu--btn {
@@ -231,7 +274,7 @@ body {
   }
   .main-navigation .pages-navigation ul {
     position: fixed;
-    top: 60px;
+    top: 90px;
     left: -100vw;
     background-color: rgba(182, 182, 182, 0.95);
     height: -moz-fit-content;
@@ -276,6 +319,7 @@ body {
   text-transform: uppercase;
   background-color: #5474fd;
   border: none;
+  cursor: pointer;
   font-size: 1em;
   font-weight: 400;
   font-family: "Aleo", "Times New Roman", Times, serif;
@@ -284,8 +328,7 @@ body {
   margin-top: 20px;
 }
 .why-us .whyus-description--btn:hover {
-  background: white;
-  color: #5474fd;
+  background: #7089fc;
 }
 .why-us .why-us-photos {
   display: flex;
@@ -342,6 +385,7 @@ body {
     text-transform: none;
     background-color: #5474fd;
     border: none;
+    cursor: pointer;
     font-size: 0.875em;
     font-weight: 300;
     font-family: "Aleo", "Times New Roman", Times, serif;
@@ -350,8 +394,7 @@ body {
     margin-top: 20px;
   }
   .why-us .whyus-description--btn:hover {
-    background: white;
-    color: #5474fd;
+    background: #7089fc;
   }
 }
 
@@ -371,12 +414,22 @@ body {
   flex-direction: row;
   align-self: center;
   justify-content: center;
+  display: inline-flex;
+  height: 100px;
+  z-index: 0;
+  position: relative;
 }
 .sheme .sheme-pictures {
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 100vw;
+  display: inline-flex;
+  height: 70px;
+  margin-top: 20px;
+  z-index: 10;
+  background-color: #333333;
+  margin-bottom: 50px;
 }
 .sheme .sheme-pictures .sheme-search--wrapper,
 .sheme .sheme-pictures .sheme-checkmark--wrapper,
@@ -394,9 +447,42 @@ body {
   margin-left: 16vw;
   margin-right: 16vw;
 }
+.sheme .sheme-pictures .sheme-search--icon,
+.sheme .sheme-pictures .sheme-checkmark--icon,
+.sheme .sheme-pictures .sheme-thumsup--icon {
+  z-index: 10;
+  background-color: #333333;
+}
+@media (max-width: 1280px) {
+  .sheme .sheme-pictures .sheme-checkmark--wrapper {
+    margin-left: 22vw;
+    margin-right: 22vw;
+  }
+}
 @media (max-width: 991px) {
   .sheme .sheme-arrows {
     display: none;
+  }
+  .sheme .sheme-pictures {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw;
+    position: static;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 30px;
+    margin: 0;
+  }
+  .sheme .sheme-pictures .sheme-checkmark--wrapper {
+    margin-left: 15vw;
+    margin-right: 15vw;
+  }
+  .sheme .sheme-search--icon,
+  .sheme .sheme-checkmark--icon,
+  .sheme .sheme-thumsup--icon {
+    z-index: 0;
+    background-color: transparent;
   }
 }
 @media (max-width: 768px) {
@@ -405,6 +491,15 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: static;
+    height: -moz-max-content;
+    height: max-content;
+  }
+  .sheme .sheme-pictures .sheme-search--icon,
+  .sheme .sheme-pictures .sheme-checkmark--icon,
+  .sheme .sheme-pictures .sheme-thumsup--icon {
+    z-index: 0;
+    background-color: transparent;
   }
   .sheme .sheme-pictures .sheme-search--wrapper,
   .sheme .sheme-pictures .sheme-checkmark--wrapper,
@@ -516,6 +611,7 @@ body {
   text-transform: uppercase;
   background-color: #5474fd;
   border: none;
+  cursor: pointer;
   font-size: 1em;
   font-weight: 400;
   font-family: "Aleo", "Times New Roman", Times, serif;
@@ -525,12 +621,11 @@ body {
 }
 .tours-first--btn:hover,
 .tours-second--btn:hover {
-  background: white;
-  color: #5474fd;
+  background: #7089fc;
 }
 .tours-first--btn:hover,
 .tours-second--btn:hover {
-  animation-name: bounce;
+  animation-name: wiggle;
   animation-duration: 0.4s;
   animation-timing-function: ease-in-out;
   animation-delay: 0s;
@@ -539,15 +634,15 @@ body {
   animation-fill-mode: forwards;
   animation-play-state: running;
 }
-@keyframes bounce {
+@keyframes wiggle {
   0%, 100% {
-    transform: scale(1);
+    transform: translate(0, 0);
   }
   25%, 75% {
-    transform: scale(0.9);
+    transform: translate(10px, 0);
   }
   50% {
-    transform: scale(1.1);
+    transform: translate(-10px, 0);
   }
 }
 @media (max-width: 991px) {
@@ -562,6 +657,7 @@ body {
     text-transform: none;
     background-color: #5474fd;
     border: none;
+    cursor: pointer;
     font-size: 0.875em;
     font-weight: 300;
     font-family: "Aleo", "Times New Roman", Times, serif;
@@ -571,8 +667,7 @@ body {
   }
   .tours-first--btn:hover,
   .tours-second--btn:hover {
-    background: white;
-    color: #5474fd;
+    background: #7089fc;
   }
 }
 
@@ -685,6 +780,10 @@ body {
   font-size: 1.5em;
   font-weight: 700;
   text-transform: uppercase;
+  cursor: pointer;
+}
+.footer .footer-company--info .footer-company--name:hover {
+  color: #7089fc;
 }
 .footer .footer-social-media ul {
   padding-left: 0;
@@ -701,7 +800,7 @@ body {
   color: #ffffff;
 }
 .footer .footer-social-media ul a .fa-brands:hover {
-  color: #5474fd;
+  color: #7089fc;
 }
 @media (max-width: 768px) {
   .footer {
