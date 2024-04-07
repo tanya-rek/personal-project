@@ -215,6 +215,7 @@ body {
   justify-content: space-between;
   background-color: #5474fd;
   padding: 2rem 6rem;
+  z-index: 1;
 }
 .main-navigation .company-name {
   font-size: 1.5em;
@@ -398,7 +399,7 @@ body {
   }
 }
 
-.sheme {
+.scheme {
   height: -moz-max-content;
   height: max-content;
   width: 100%;
@@ -409,7 +410,7 @@ body {
   justify-content: center;
   background-color: #333333;
 }
-.sheme .sheme-arrows {
+.scheme .scheme-arrows {
   display: flex;
   flex-direction: row;
   align-self: center;
@@ -419,7 +420,7 @@ body {
   z-index: 0;
   position: relative;
 }
-.sheme .sheme-pictures {
+.scheme .scheme-pictures {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -431,9 +432,9 @@ body {
   background-color: #333333;
   margin-bottom: 50px;
 }
-.sheme .sheme-pictures .sheme-search--wrapper,
-.sheme .sheme-pictures .sheme-checkmark--wrapper,
-.sheme .sheme-pictures .sheme-thumsup--wrapper {
+.scheme .scheme-pictures .scheme-search--wrapper,
+.scheme .scheme-pictures .scheme-checkmark--wrapper,
+.scheme .scheme-pictures .scheme-thumsup--wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -443,27 +444,27 @@ body {
   line-height: 35px;
   font-family: "Aleo", "Times New Roman", Times, serif;
 }
-.sheme .sheme-pictures .sheme-checkmark--wrapper {
+.scheme .scheme-pictures .scheme-checkmark--wrapper {
   margin-left: 16vw;
   margin-right: 16vw;
 }
-.sheme .sheme-pictures .sheme-search--icon,
-.sheme .sheme-pictures .sheme-checkmark--icon,
-.sheme .sheme-pictures .sheme-thumsup--icon {
+.scheme .scheme-pictures .scheme-search--icon,
+.scheme .scheme-pictures .scheme-checkmark--icon,
+.scheme .scheme-pictures .scheme-thumsup--icon {
   z-index: 10;
   background-color: #333333;
 }
 @media (max-width: 1280px) {
-  .sheme .sheme-pictures .sheme-checkmark--wrapper {
+  .scheme .scheme-pictures .scheme-checkmark--wrapper {
     margin-left: 22vw;
     margin-right: 22vw;
   }
 }
 @media (max-width: 991px) {
-  .sheme .sheme-arrows {
+  .scheme .scheme-arrows {
     display: none;
   }
-  .sheme .sheme-pictures {
+  .scheme .scheme-pictures {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -474,19 +475,19 @@ body {
     padding: 30px;
     margin: 0;
   }
-  .sheme .sheme-pictures .sheme-checkmark--wrapper {
+  .scheme .scheme-pictures .scheme-checkmark--wrapper {
     margin-left: 15vw;
     margin-right: 15vw;
   }
-  .sheme .sheme-search--icon,
-  .sheme .sheme-checkmark--icon,
-  .sheme .sheme-thumsup--icon {
+  .scheme .scheme-search--icon,
+  .scheme .scheme-checkmark--icon,
+  .scheme .scheme-thumsup--icon {
     z-index: 0;
     background-color: transparent;
   }
 }
 @media (max-width: 768px) {
-  .sheme .sheme-pictures {
+  .scheme .scheme-pictures {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -495,24 +496,24 @@ body {
     height: -moz-max-content;
     height: max-content;
   }
-  .sheme .sheme-pictures .sheme-search--icon,
-  .sheme .sheme-pictures .sheme-checkmark--icon,
-  .sheme .sheme-pictures .sheme-thumsup--icon {
+  .scheme .scheme-pictures .scheme-search--icon,
+  .scheme .scheme-pictures .scheme-checkmark--icon,
+  .scheme .scheme-pictures .scheme-thumsup--icon {
     z-index: 0;
     background-color: transparent;
   }
-  .sheme .sheme-pictures .sheme-search--wrapper,
-  .sheme .sheme-pictures .sheme-checkmark--wrapper,
-  .sheme .sheme-pictures .sheme-thumsup--wrapper {
+  .scheme .scheme-pictures .scheme-search--wrapper,
+  .scheme .scheme-pictures .scheme-checkmark--wrapper,
+  .scheme .scheme-pictures .scheme-thumsup--wrapper {
     width: 70%;
     font-size: 1.25em;
     font-weight: 400;
     line-height: 30px;
     font-family: "Aleo", "Times New Roman", Times, serif;
   }
-  .sheme .sheme-pictures .sheme-search--wrapper img,
-  .sheme .sheme-pictures .sheme-checkmark--wrapper img,
-  .sheme .sheme-pictures .sheme-thumsup--wrapper img {
+  .scheme .scheme-pictures .scheme-search--wrapper img,
+  .scheme .scheme-pictures .scheme-checkmark--wrapper img,
+  .scheme .scheme-pictures .scheme-thumsup--wrapper img {
     width: 13%;
   }
 }

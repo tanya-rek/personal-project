@@ -194,6 +194,7 @@ body {
   justify-content: space-between;
   background-color: $primaryColor;
   @include padding-BigScreen;
+  z-index: 1;
 
   .company-name {
     font-size: $f-size-24;
@@ -366,9 +367,9 @@ body {
   }
 }
 
-//The sheme with arrows
+//The scheme with arrows
 
-.sheme {
+.scheme {
   height: max-content;
   width: 100%;
   @include padding-BigScreen;
@@ -376,7 +377,7 @@ body {
   justify-content: center;
   background-color: $bgSecondaryBlack;
 
-  .sheme-arrows {
+  .scheme-arrows {
     @include d-flex-row;
     align-self: center;
     justify-content: center;
@@ -386,7 +387,7 @@ body {
     position: relative;
   }
 
-  .sheme-pictures {
+  .scheme-pictures {
     @include d-flex-row;
     justify-content: center;
     width: 100vw;
@@ -397,30 +398,30 @@ body {
     background-color: $bgSecondaryBlack;
     margin-bottom: 50px;
 
-    .sheme-search--wrapper,
-    .sheme-checkmark--wrapper,
-    .sheme-thumsup--wrapper {
+    .scheme-search--wrapper,
+    .scheme-checkmark--wrapper,
+    .scheme-thumsup--wrapper {
       @include d-flex-col-align-center;
       justify-content: center;
       @include subtitle-font;
     }
 
-    .sheme-checkmark--wrapper {
+    .scheme-checkmark--wrapper {
       margin-left: 16vw;
       margin-right: 16vw;
     }
 
-    .sheme-search--icon,
-    .sheme-checkmark--icon,
-    .sheme-thumsup--icon {
+    .scheme-search--icon,
+    .scheme-checkmark--icon,
+    .scheme-thumsup--icon {
       z-index: 10;
       background-color: $bgSecondaryBlack;
     }
   }
 
   @media (max-width: $desktop) {
-    .sheme-pictures {
-      .sheme-checkmark--wrapper {
+    .scheme-pictures {
+      .scheme-checkmark--wrapper {
         margin-left: 22vw;
         margin-right: 22vw;
       }
@@ -428,11 +429,11 @@ body {
   }
 
   @media (max-width: $medium-tablet) {
-    .sheme-arrows {
+    .scheme-arrows {
       display: none;
     }
 
-    .sheme-pictures {
+    .scheme-pictures {
       @include d-flex-row;
       justify-content: center;
       width: 100vw;
@@ -441,37 +442,37 @@ body {
       @include padding-SmallScreen;
       margin: 0;
 
-      .sheme-checkmark--wrapper {
+      .scheme-checkmark--wrapper {
         margin-left: 15vw;
         margin-right: 15vw;
       }
     }
 
-    .sheme-search--icon,
-    .sheme-checkmark--icon,
-    .sheme-thumsup--icon {
+    .scheme-search--icon,
+    .scheme-checkmark--icon,
+    .scheme-thumsup--icon {
       z-index: 0;
       background-color: transparent;
     }
   }
 
   @media (max-width: $tablet) {
-    .sheme-pictures {
+    .scheme-pictures {
       @include d-flex-col-align-center;
       justify-content: center;
       position: static;
       height: max-content;
 
-      .sheme-search--icon,
-      .sheme-checkmark--icon,
-      .sheme-thumsup--icon {
+      .scheme-search--icon,
+      .scheme-checkmark--icon,
+      .scheme-thumsup--icon {
         z-index: 0;
         background-color: transparent;
       }
 
-      .sheme-search--wrapper,
-      .sheme-checkmark--wrapper,
-      .sheme-thumsup--wrapper {
+      .scheme-search--wrapper,
+      .scheme-checkmark--wrapper,
+      .scheme-thumsup--wrapper {
         width: 70%;
         @include subtitle-font-min;
 
