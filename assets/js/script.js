@@ -1,7 +1,7 @@
-const btn = document.querySelector(".btn");
+const button = document.querySelector(".hamburger-menu--btn");
 
 const list = document.querySelector("ul");
 
-btn.addEventListener("click", () => {
+button.addEventListener("click", () => {
   list.classList.toggle("active");
 });

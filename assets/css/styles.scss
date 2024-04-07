@@ -35,6 +35,7 @@ body {
   @include bg-image-cover-noRepeat;
   @include d-flex-col-align-center;
   justify-content: center;
+  cursor: pointer;
   a {
     color: $whiteColor;
   }
@@ -74,7 +75,7 @@ body {
     border: none;
 
     &::placeholder {
-      color: grey;
+      color: $greyFont;
       letter-spacing: $letterSpacing;
       text-align: center;
     }
@@ -108,6 +109,27 @@ body {
       margin-left: 5px;
       height: 10%;
     }
+
+    &:hover {
+      animation-name: stretch;
+      animation-duration: 0.4s;
+      animation-timing-function: ease-in-out;
+      animation-delay: 0s;
+      animation-direction: alternate;
+      animation-iteration-count: 3s;
+      animation-fill-mode: forwards;
+      animation-play-state: running;
+    }
+
+    @keyframes stretch {
+      0%,
+      100% {
+        transform: scaleX(1);
+      }
+      50% {
+        transform: scaleX(1.3);
+      }
+    }
   }
   @media (max-width: $medium-tablet) {
     height: 68px;
@@ -136,6 +158,32 @@ body {
     span {
       margin: 10px 0 20px;
     }
+
+    &:hover {
+      animation: rotation 1000ms 3;
+      cursor: pointer;
+    }
+    @keyframes rotation {
+      0% {
+        transform: rotate(-15deg);
+        color: $primaryColorHover;
+      }
+
+      50% {
+        transform: rotate(0deg);
+        color: $whiteColor;
+      }
+
+      75% {
+        transform: rotate(15deg);
+        color: $primaryColorHover;
+      }
+
+      100% {
+        transform: rotate(0deg);
+        color: $whiteColor;
+      }
+    }
   }
 }
 
@@ -150,7 +198,8 @@ body {
   .company-name {
     font-size: $f-size-24;
     font-weight: $font-weight-bold;
-    color: white;
+    color: $whiteColor;
+    cursor: pointer;
   }
 
   li {
@@ -186,13 +235,14 @@ body {
         text-align: center;
 
         a {
-          color: white;
+          color: $whiteColor;
           text-decoration: none;
         }
 
         &:hover {
-          background-color: $hoverColor;
+          background-color: $primaryColorHover;
           border-radius: 8px;
+          font-size: $f-size-16;
           transition-duration: 1000ms;
         }
       }
@@ -208,7 +258,7 @@ body {
       }
       ul {
         position: fixed;
-        top: 60px;
+        top: 90px;
         left: -100vw;
         background-color: $greyColor;
         height: fit-content;
@@ -330,12 +380,22 @@ body {
     @include d-flex-row;
     align-self: center;
     justify-content: center;
+    display: inline-flex;
+    height: 100px;
+    z-index: 0;
+    position: relative;
   }
 
   .sheme-pictures {
     @include d-flex-row;
     justify-content: center;
     width: 100vw;
+    display: inline-flex;
+    height: 70px;
+    margin-top: 20px;
+    z-index: 10;
+    background-color: $bgSecondaryBlack;
+    margin-bottom: 50px;
 
     .sheme-search--wrapper,
     .sheme-checkmark--wrapper,
@@ -349,11 +409,49 @@ body {
       margin-left: 16vw;
       margin-right: 16vw;
     }
+
+    .sheme-search--icon,
+    .sheme-checkmark--icon,
+    .sheme-thumsup--icon {
+      z-index: 10;
+      background-color: $bgSecondaryBlack;
+    }
+  }
+
+  @media (max-width: $desktop) {
+    .sheme-pictures {
+      .sheme-checkmark--wrapper {
+        margin-left: 22vw;
+        margin-right: 22vw;
+      }
+    }
   }
 
   @media (max-width: $medium-tablet) {
     .sheme-arrows {
       display: none;
+    }
+
+    .sheme-pictures {
+      @include d-flex-row;
+      justify-content: center;
+      width: 100vw;
+      position: static;
+      height: fit-content;
+      @include padding-SmallScreen;
+      margin: 0;
+
+      .sheme-checkmark--wrapper {
+        margin-left: 15vw;
+        margin-right: 15vw;
+      }
+    }
+
+    .sheme-search--icon,
+    .sheme-checkmark--icon,
+    .sheme-thumsup--icon {
+      z-index: 0;
+      background-color: transparent;
     }
   }
 
@@ -361,6 +459,15 @@ body {
     .sheme-pictures {
       @include d-flex-col-align-center;
       justify-content: center;
+      position: static;
+      height: max-content;
+
+      .sheme-search--icon,
+      .sheme-checkmark--icon,
+      .sheme-thumsup--icon {
+        z-index: 0;
+        background-color: transparent;
+      }
 
       .sheme-search--wrapper,
       .sheme-checkmark--wrapper,
@@ -463,7 +570,7 @@ body {
   @include primaryButton-Size;
 
   &:hover {
-    animation-name: bounce;
+    animation-name: wiggle;
     animation-duration: 0.4s;
     animation-timing-function: ease-in-out;
     animation-delay: 0s;
@@ -473,17 +580,17 @@ body {
     animation-play-state: running;
   }
 
-  @keyframes bounce {
+  @keyframes wiggle {
     0%,
     100% {
-      transform: scale(1);
+      transform: translate(0, 0);
     }
     25%,
     75% {
-      transform: scale(0.9);
+      transform: translate(10px, 0);
     }
     50% {
-      transform: scale(1.1);
+      transform: translate(-10px, 0);
     }
   }
 
@@ -597,6 +704,11 @@ body {
       font-size: $f-size-24;
       font-weight: 700;
       text-transform: uppercase;
+      cursor: pointer;
+
+      &:hover {
+        color: $primaryColorHover;
+      }
     }
   }
 
@@ -615,7 +727,7 @@ body {
         color: $whiteColor;
 
         .fa-brands:hover {
-          color: $primaryColor;
+          color: $primaryColorHover;
         }
       }
     }
